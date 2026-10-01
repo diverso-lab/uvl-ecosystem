@@ -13,13 +13,16 @@
   --on-accent: #ffffff;
   --warn: #0e7089;
   --warn-soft: #e4f2f5;
-  --code-bg: #0a1e24;
-  --code-text: #dcebef;
-  --code-muted: #7d9aa2;
-  --code-kw: #5ccbe0;
-  --code-num: #b5e3ec;
-  --code-fn: #5ccbe0;
-  --code-attr: #8fd3e2;
+  --code-bg: #f3f8f9;
+  --code-text: #16262b;
+  --code-muted: #5f7a82;
+  --code-kw: #0e7089;
+  --code-num: #0a5568;
+  --code-fn: #0e7089;
+  --code-attr: #2a8ea8;
+  --code-op: #44606a;
+  --code-border: #d3e4e8;
+  --code-dot: #c4d8dd;
   --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 8px 24px rgba(16, 24, 40, .06);
   --radius: 10px;
   --font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -31,14 +34,14 @@
     --bg: #0b1316; --bg-alt: #0f1b1f; --surface: #13232a; --border: #1f363e;
     --text: #e6eaf0; --muted: #98a2b3; --accent: #5bb8cc; --accent-strong: #8fd3e2;
     --accent-soft: #0f2e36; --on-accent: #0b1220; --warn: #5bb8cc; --warn-soft: #0f2e36;
-    --code-bg: #071419; --shadow: none; color-scheme: dark;
+    --code-bg: #071419; --code-text: #dcebef; --code-muted: #7d9aa2; --code-kw: #5ccbe0; --code-num: #b5e3ec; --code-fn: #5ccbe0; --code-attr: #8fd3e2; --code-op: #a9cdd6; --code-border: #16323a; --code-dot: #1f3f48; --shadow: none; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0b1316; --bg-alt: #0f1b1f; --surface: #13232a; --border: #1f363e;
   --text: #e6eaf0; --muted: #98a2b3; --accent: #5bb8cc; --accent-strong: #8fd3e2;
   --accent-soft: #0f2e36; --on-accent: #0b1220; --warn: #5bb8cc; --warn-soft: #0f2e36;
-  --code-bg: #071419; --shadow: none; color-scheme: dark;
+  --code-bg: #071419; --code-text: #dcebef; --code-muted: #7d9aa2; --code-kw: #5ccbe0; --code-num: #b5e3ec; --code-fn: #5ccbe0; --code-attr: #8fd3e2; --code-op: #a9cdd6; --code-border: #16323a; --code-dot: #1f3f48; --shadow: none; color-scheme: dark;
 }
 
 /* ---------- Base ---------- */
@@ -128,20 +131,20 @@ code { font-family: var(--mono); font-size: .9em; }
 .institutions { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 0; margin: 0; color: var(--muted); font-size: .88rem; font-weight: 500; }
 
 /* ---------- Code ---------- */
-.code-card { background: var(--code-bg); border-radius: var(--radius); overflow: hidden; border: 1px solid #16323a; min-width: 0; }
-.code-head { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-bottom: 1px solid #16323a; }
-.code-head .dot { width: 10px; height: 10px; border-radius: 50%; background: #1f3f48; }
+.code-card { background: var(--code-bg); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--code-border); min-width: 0; }
+.code-head { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-bottom: 1px solid var(--code-border); }
+.code-head .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--code-dot); }
 .code-head .file { font: .8rem var(--mono); color: var(--code-muted); margin-left: 6px; }
-.copy { margin-left: auto; background: transparent; color: var(--code-muted); border: 1px solid #1f3f48; border-radius: 6px; font: 500 .75rem var(--font); padding: 3px 9px; cursor: pointer; }
+.copy { margin-left: auto; background: transparent; color: var(--code-muted); border: 1px solid var(--code-dot); border-radius: 6px; font: 500 .75rem var(--font); padding: 3px 9px; cursor: pointer; }
 .copy:hover { color: var(--code-text); border-color: var(--code-muted); }
 .code-card pre { margin: 0; padding: 16px 18px; overflow-x: auto; }
 .code-card code { color: var(--code-text); font-size: .86rem; line-height: 1.6; }
-.uvl .kw { color: var(--code-kw); font-weight: 500; }
+.uvl .kw { color: var(--code-kw); font-weight: 600; }
 .uvl .num { color: var(--code-num); }
 .uvl .fn { color: var(--code-fn); }
 .uvl .attr { color: var(--code-attr); }
 .uvl .cm { color: var(--code-muted); font-style: italic; }
-.uvl .op { color: #a9cdd6; }
+.uvl .op { color: var(--code-op); }
 
 /* ---------- Sections ---------- */
 .section { padding: 88px 0; }
@@ -289,7 +292,7 @@ code { font-family: var(--mono); font-size: .9em; }
 .plugins { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; }
 .install { display: grid; gap: 6px; margin-top: 4px; }
 .install code, .pkg {
-  display: block; background: var(--code-bg); color: var(--code-text); font-size: .8rem; padding: 7px 10px;
+  display: block; background: var(--code-bg); color: var(--code-text); border: 1px solid var(--code-border); font-size: .8rem; padding: 7px 10px;
   border-radius: 6px; overflow-x: auto; white-space: nowrap;
 }
 .pkg { margin-top: 4px; }

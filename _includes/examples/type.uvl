@@ -9,11 +9,11 @@ features
             String Name        // typed features
             Integer Slices
         optional
+            Cheese
             Sauce
                 alternative
                     Ketchup
                     Mustard
-            Cheese
 
 constraints
     Ketchup => Cheese

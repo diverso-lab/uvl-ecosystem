@@ -3,11 +3,11 @@ features
         mandatory
             Bread
         optional
+            Cheese
             Sauce
                 alternative
                     Ketchup
                     Mustard
-            Cheese
 
 constraints
     Ketchup => Cheese

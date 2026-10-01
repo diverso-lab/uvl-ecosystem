@@ -6,8 +6,8 @@ features
         mandatory
             Bread
         optional
-            Sauce.Type
             Cheese
+            Sauce.Type
 
 constraints
     Sauce.Ketchup => Cheese

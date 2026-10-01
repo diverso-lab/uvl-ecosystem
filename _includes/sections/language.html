@@ -19,7 +19,7 @@
 
     <div class="levels" data-tabs>
       <div class="level-stack" role="tablist" aria-label="Language levels">
-        <button role="tab" aria-selected="true" aria-controls="lvl-boolean" id="tab-boolean" class="level" data-level="1">
+        <button role="tab" aria-selected="false" aria-controls="lvl-boolean" id="tab-boolean" class="level" data-level="1" tabindex="-1">
           <span class="level-name">Boolean</span>
           <span class="level-ext">core · group cardinality</span>
         </button>
@@ -27,13 +27,13 @@
           <span class="level-name">Arithmetic</span>
           <span class="level-ext">attributes · aggregates · feature cardinality</span>
         </button>
-        <button role="tab" aria-selected="false" aria-controls="lvl-type" id="tab-type" class="level" data-level="3" tabindex="-1">
+        <button role="tab" aria-selected="true" aria-controls="lvl-type" id="tab-type" class="level" data-level="3">
           <span class="level-name">Type</span>
           <span class="level-ext">String/Integer/Real features · numeric &amp; string constraints</span>
         </button>
       </div>
       <div class="level-panels">
-        <div role="tabpanel" id="lvl-boolean" aria-labelledby="tab-boolean" class="code-card">
+        <div role="tabpanel" id="lvl-boolean" aria-labelledby="tab-boolean" class="code-card" hidden>
           <div class="code-head"><span class="file">Boolean level</span><button class="copy" type="button">Copy</button></div>
           <pre><code class="uvl">{% include uvl.html file="boolean" %}</code></pre>
         </div>
@@ -41,7 +41,7 @@
           <div class="code-head"><span class="file">Arithmetic level</span><button class="copy" type="button">Copy</button></div>
           <pre><code class="uvl">{% include uvl.html file="arithmetic" %}</code></pre>
         </div>
-        <div role="tabpanel" id="lvl-type" aria-labelledby="tab-type" class="code-card" hidden>
+        <div role="tabpanel" id="lvl-type" aria-labelledby="tab-type" class="code-card">
           <div class="code-head"><span class="file">Type level</span><button class="copy" type="button">Copy</button></div>
           <pre><code class="uvl">{% include uvl.html file="type" %}</code></pre>
         </div>

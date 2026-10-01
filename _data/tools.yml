@@ -1,81 +1,481 @@
-# Tools grouped by what the visitor wants to do.
-# `repo` (org repo name) lets the page pull live stars / last push from GitHub.
-- category: Try & edit
-  key: try
-  items:
-    - name: flamapy.IDE
-      description: Web-based editor and analysis environment for UVL models. Nothing to install.
-      lang: Web
-      url: https://ide.flamapy.org/
-    - name: UVL Playground
-      description: Web playground built on the UVLS language server.
-      lang: Web
-      url: https://uvl.uni-ulm.de/
-    - name: VS Code extension
-      description: Syntax highlighting, diagnostics and completion for UVL, powered by UVLS.
-      lang: VS Code
-      url: https://marketplace.visualstudio.com/items?itemName=caradhras.uvls-code
-    - name: uvlhighlight
-      description: LaTeX package to typeset UVL listings with syntax highlighting in papers.
-      lang: LaTeX
-      repo: uvlhighlight
+# UVL ecosystem catalogue. Researched and link-checked on 2026-10-01.
+# Fields: name, by (group), desc, lang, url (website), repo, pkg, doi, note (shown as a warning tag).
+# `org_repo` = repository name inside the UVL GitHub organization (enables live stars).
 
-- category: Integrate in your code
-  key: integrate
-  items:
-    - name: uvl-parser
-      description: Reference ANTLR grammar with generated parsers for Java, Python and JavaScript.
-      lang: Java · Python · JS
-      repo: uvl-parser
-    - name: java-fm-metamodel
-      description: Java library to parse, manipulate and write UVL models through a feature-model API.
-      lang: Java
-      repo: java-fm-metamodel
-    - name: uvlparser on PyPI
-      description: Python distribution of the UVL parser.
-      lang: Python
-      url: https://pypi.org/project/uvlparser/
-    - name: UVL.js
-      description: The parser for the JavaScript ecosystem, published on npm as uvl-parser.
-      lang: JavaScript
-      url: https://www.npmjs.com/package/uvl-parser
+featured:
+  - name: UVL Parser
+    by: UVL community
+    tagline: The reference grammar
+    desc: Official ANTLR grammar for UVL with generated parsers for Java, Python and JavaScript. Every other implementation follows it.
+    repo: https://github.com/Universal-Variability-Language/uvl-parser
+    org_repo: uvl-parser
+    install:
+      - pip install uvlparser
+      - npm install uvl-parser
+  - name: Flamapy
+    by: University of Seville & partners
+    tagline: Automated analysis in Python
+    desc: Framework for the automated analysis of UVL models with a CLI, a Python facade and pluggable SAT, BDD, SMT and #SAT solvers.
+    url: https://www.flamapy.org
+    repo: https://github.com/flamapy/flamapy
+    doi: 10.1145/3579028.3609008
+    install:
+      - pip install flamapy
+    plugins: [flamapy-fm, flamapy-sat, flamapy-bdd, flamapy-z3, flamapy-sharpsat, flamapy-sdd, flamapy-dnnf, flamapy-configurator]
+  - name: flamapy.IDE
+    by: University of Seville
+    tagline: Analyze UVL in your browser
+    desc: Write, visualize, analyze and configure UVL models online. Flamapy runs entirely client-side through WebAssembly, so there is nothing to install.
+    url: https://ide.flamapy.org
+    repo: https://github.com/flamapy/flamapy-ide
+    doi: 10.1145/3715340.3715436
+  - name: UVLHub
+    by: University of Seville & partners
+    tagline: Open-science model repository
+    desc: Publish, search and analyze UVL datasets. Every dataset gets a Zenodo DOI and can be analyzed with Flamapy on the spot.
+    url: https://www.uvlhub.io
+    repo: https://github.com/diverso-lab/uvlhub
+    doi: 10.1016/j.jss.2024.112150
+  - name: FeatureIDE
+    by: Ulm · Braunschweig · Magdeburg · Paderborn
+    tagline: The feature-oriented IDE
+    desc: Eclipse-based IDE for feature-oriented software development that reads, writes and graphically edits UVL feature models.
+    url: https://featureide.github.io/
+    repo: https://github.com/FeatureIDE/FeatureIDE
+    doi: 10.1145/3461002.3473940
+  - name: TraVarT
+    by: JKU Linz & KIT
+    tagline: Transform between notations
+    desc: Plugin-based framework that transforms between variability modelling notations, using UVL as the pivot, with one-way and round-trip modes.
+    repo: https://github.com/transforming-variability-artifacts/TraVarT
+    doi: 10.1145/3442391.3442400
 
-- category: IDE support
-  key: ide
-  items:
-    - name: UVLS
-      description: Language Server Protocol implementation for UVL. Bring UVL to any LSP-capable editor.
-      lang: Rust
-      repo: uvl-lsp
+categories:
+  - key: try
+    label: Try online
+    blurb: Nothing to install. Open a browser and start modelling.
+    items:
+      - name: flamapy.IDE
+        by: University of Seville
+        desc: Browser IDE to write, visualize, analyze and configure UVL models with Flamapy compiled to WebAssembly.
+        lang: Web
+        url: https://ide.flamapy.org
+        repo: https://github.com/flamapy/flamapy-ide
+      - name: UVL Studio
+        by: Univ. Rennes / Inria
+        desc: Dependency-free browser workbench with live well-formedness checks, a FODA diagram and SAT-based interactive configuration.
+        lang: Web
+        url: https://acherm.github.io/uvl-studio/
+        repo: https://github.com/acherm/uvl-studio
+      - name: Flamapy online demos
+        by: University of Seville
+        desc: Run Flamapy operations on UVL in the browser, plus ready-made Google Colab notebooks.
+        lang: Web
+        url: https://www.flamapy.org/try-it
+      - name: VariaBlens
+        by: University of A Coruña
+        desc: Import models from UVLHub, edit them in Monaco and chat with an AI assistant that runs Flamapy analyses.
+        lang: Web
+        url: https://variablens.lbd.org.es
+        repo: https://github.com/lbdudc/variablens
+      - name: FM Fact Label
+        by: University of Málaga
+        desc: Characterizes a UVL model with ~46 metrics and renders an interactive, exportable "nutrition-style" fact label.
+        lang: Web · Python
+        url: https://fmfactlabel.github.io/
+        repo: https://github.com/fmfactlabel/fm_characterization
+        pkg: pip install fmfactlabel
+        doi: 10.1016/j.scico.2024.103214
+      - name: UVL Playground
+        by: University of Ulm
+        desc: Monaco-based UVL editor connected to the UVLS language server.
+        lang: Web
+        url: https://uvl.uni-ulm.de/
+        repo: https://github.com/SoftVarE-Group/uvl-playground
+        note: currently offline
 
-- category: Analyze & transform
-  key: analyze
-  items:
-    - name: Flamapy
-      description: Python framework for the automated analysis of feature models, with first-class UVL support.
-      lang: Python
-      url: https://www.flamapy.org/
-    - name: FeatureIDE
-      description: Eclipse-based IDE for feature-oriented software development that reads and writes UVL.
-      lang: Java
-      url: https://github.com/FeatureIDE/FeatureIDE
-    - name: TraVarT
-      description: Transformations between UVL and other variability modelling approaches.
-      lang: Java
-      url: https://github.com/SECPS/TraVarT
-    - name: FM Fact Label
-      description: Configurable, interactive visualization of feature model characteristics.
-      lang: Web
-      url: https://doi.org/10.1145/3503229.3547025
+  - key: edit
+    label: Edit & IDEs
+    blurb: Editors, language servers and diagram tools.
+    items:
+      - name: UVLS
+        by: UVL community
+        desc: Language server for UVL with completion, diagnostics, go-to-definition, Z3-based semantic checks and a configuration editor.
+        lang: Rust
+        url: https://universal-variability-language.github.io/uvl-lsp/uvls/
+        repo: https://github.com/Universal-Variability-Language/uvl-lsp
+        org_repo: uvl-lsp
+        doi: 10.1145/3579028.3609014
+      - name: UVLS for VS Code
+        by: UVL community
+        desc: VS Code extension bundling UVLS for highlighting, completion, error checking and configuration editing.
+        lang: VS Code
+        url: https://marketplace.visualstudio.com/items?itemName=caradhras.uvls-code
+      - name: Flama for VS Code
+        by: University of Seville
+        desc: Run Flamapy analysis operations on UVL files directly inside VS Code.
+        lang: VS Code
+        url: https://marketplace.visualstudio.com/items?itemName=diversolab.flamapy
+        repo: https://github.com/flamapy/vscode_extension
+      - name: FeatureIDE
+        by: Ulm · Braunschweig · Magdeburg · Paderborn
+        desc: Eclipse IDE that reads, writes and graphically edits UVL feature models.
+        lang: Java
+        url: https://featureide.github.io/
+        repo: https://github.com/FeatureIDE/FeatureIDE
+      - name: UVL GLSP Diagram Editor
+        by: Community
+        desc: VS Code extension with graphical diagram editing of UVL models on Eclipse GLSP.
+        lang: VS Code
+        url: https://open-vsx.org/extension/NickRuider/uvl-vscode-extension
+        repo: https://github.com/xXNicksdaXx/uvl-glsp
+      - name: FeatureDraw
+        by: University of Seville
+        desc: Drag-and-drop feature model editor with UVL import/export and SVG/PDF export ready for papers.
+        lang: Web
+        repo: https://github.com/diverso-lab/featuredraw
+      - name: uvlhighlight
+        by: UVL community
+        desc: LaTeX package to typeset UVL listings with syntax highlighting in papers and slides.
+        lang: LaTeX
+        repo: https://github.com/Universal-Variability-Language/uvlhighlight
+        org_repo: uvlhighlight
 
-- category: Models & data
-  key: data
-  items:
-    - name: uvl-models
-      description: Broad collection of publicly available feature models in UVL. Pull requests welcome.
-      lang: UVL
-      repo: uvl-models
-    - name: UVLHub
-      description: Feature model data repository built on UVL and open science principles, with DOIs per dataset.
-      lang: Web
-      url: https://www.uvlhub.io/
+  - key: analyze
+    label: Analyze & reason
+    blurb: Solvers, counting, sampling and dependency analysis.
+    items:
+      - name: Flamapy
+        by: University of Seville & partners
+        desc: Python framework for automated analysis of UVL with PySAT, BDD, Z3, ApproxMC, SDD and d-DNNF backends.
+        lang: Python
+        url: https://www.flamapy.org
+        repo: https://github.com/flamapy/flamapy
+        pkg: pip install flamapy
+      - name: Flamapy REST
+        by: University of Seville
+        desc: REST API with Swagger docs exposing every Flamapy operation over HTTP, as a hosted service, Docker image and PyPI package.
+        lang: Python
+        url: https://rest.flamapy.org
+        repo: https://github.com/flamapy/flamapy_rest
+        pkg: pip install flamapy-rest
+      - name: FeatJAR
+        by: FeatureIDE team
+        desc: Modular Java libraries succeeding the FeatureIDE core, with UVL formats feeding SAT and knowledge-compilation analyses.
+        lang: Java
+        repo: https://github.com/FeatureIDE/FeatJAR
+      - name: UVL-SMT
+        by: University of Ulm
+        desc: JavaSMT/Z3 reasoning library for UVL models, including arithmetic and typed constraints.
+        lang: Java
+        repo: https://github.com/SoftVarE-Group/uvl-smt
+      - name: CFM Toolbox
+        by: KIT
+        desc: Python toolbox and CLI for cardinality-based feature models with UVL import/export and a graphical editor plugin.
+        lang: Python
+        url: https://kit-tva.github.io/cfmtoolbox/
+        repo: https://github.com/KIT-TVA/cfmtoolbox
+        pkg: pip install cfmtoolbox
+      - name: CFMTools
+        by: Community
+        desc: Rust framework for cardinality-based feature models covering UVL import, transformation, analysis and uniform sampling.
+        lang: Rust
+        repo: https://github.com/BaumKM/cfmtools
+      - name: Strong4VM
+        by: UNED
+        desc: Computes graphs of strong transitive dependencies and conflicts between features from UVL or DIMACS models.
+        lang: C++
+        repo: https://github.com/rheradio/strong4vm
+        doi: 10.1016/j.softx.2026.102663
+      - name: UVLParser (GPU)
+        by: Community
+        desc: C++/CUDA tool that simplifies UVL or DIMACS models and detects invalid feature interactions, with optional GPU acceleration.
+        lang: C++ · CUDA
+        repo: https://github.com/HettichLennard/UVLParser
+
+  - key: configure
+    label: Configure & derive
+    blurb: From a valid configuration to a running product.
+    items:
+      - name: flamapy-configurator
+        by: University of Seville
+        desc: Turns a UVL model into a guided, question-by-question configurator with real-time consistency checking.
+        lang: Python
+        repo: https://github.com/flamapy/configurator_metamodel
+        pkg: pip install flamapy-configurator
+      - name: SPLENT
+        by: University of Seville
+        desc: Software product line toolkit for Python that turns a UVL feature model into a validated, containerized running product.
+        lang: Python
+        url: https://splent.io
+        repo: https://git.splent.io/splent-io
+        pkg: pip install splent-cli
+      - name: UVengine
+        by: University of Málaga
+        desc: Variability-resolution engine that derives products from UVL configurations and Jinja templates across text artifacts.
+        lang: Python
+        url: https://uvengine.github.io
+        repo: https://github.com/UVengine/uvengine
+        doi: 10.1145/3748269.3748486
+      - name: UVL Rust variant generation
+        by: Community
+        desc: Procedural macros that conditionally compile Rust code from UVL configurations exported by UVLS.
+        lang: Rust
+        repo: https://github.com/wernermuench/uvl-rust-variant-generation
+      - name: UVL2Pat
+        by: Community
+        desc: Template-based generator turning UVL configurations into Swift implementations of design patterns.
+        lang: Swift · Python
+        url: https://trran.github.io/UVL2Pat/
+        repo: https://github.com/trran/UVL2Pat
+
+  - key: transform
+    label: Transform & interoperate
+    blurb: Move models between UVL, solvers and other notations.
+    items:
+      - name: TraVarT
+        by: JKU Linz & KIT
+        desc: Transforms between variability notations with UVL as the pivot metamodel, including round-trip modes and benchmarks.
+        lang: Java
+        repo: https://github.com/transforming-variability-artifacts/TraVarT
+      - name: TraVarT Kconfig plugin
+        by: JKU Linz & KIT
+        desc: Round-trip transformation between Linux-style Kconfig and UVL.
+        lang: Java
+        repo: https://github.com/transforming-variability-artifacts/TraVarT-Kconfig-Language
+      - name: TraVarT FeatureIDE plugin
+        by: JKU Linz & KIT
+        desc: Converts FeatureIDE XML feature models to UVL and back.
+        lang: Java
+        repo: https://github.com/transforming-variability-artifacts/TraVarT-FeatureIDEPlugin
+      - name: torte
+        by: Paderborn University
+        desc: Docker pipeline that extracts feature models from Kconfig systems like Linux and converts them between FeatureIDE, UVL and DIMACS.
+        lang: Shell · Java
+        url: http://elias-kuiter.de/torte-research/
+        repo: https://github.com/ekuiter/torte
+        doi: 10.1145/3774748.3787618
+      - name: uvllang
+        by: University of Ulm
+        desc: Converts UVL to DIMACS CNF or SMT-LIB 2 and recovers UVL from them, with native Zig binaries.
+        lang: Python · Zig
+        repo: https://github.com/OBDDimal/uvllang
+        pkg: pip install uvllang
+      - name: uvl2dimacs
+        by: UNED
+        desc: C++ library and CLI converting UVL to DIMACS CNF with straightforward or Tseitin encodings.
+        lang: C++
+        repo: https://github.com/rheradio/uvl2dimacs
+      - name: Pseudo-Boolean UVL encoder
+        by: Community
+        desc: Encodes UVL feature models as pseudo-Boolean constraints on top of java-fm-metamodel.
+        lang: Java
+        repo: https://github.com/st-vi/pseudo-boolean-uvl-encoder
+      - name: Nemo2
+        by: University of Málaga
+        desc: Bit-blasts numerical feature models into Boolean UVL, propositional formulas or CNF.
+        lang: Python
+        repo: https://github.com/danieljmg/Nemo2_tool
+      - name: UVL Feature-Model Merger
+        by: Community
+        desc: Consistency-based merging of regional UVL feature models into one semantics-preserving model.
+        lang: Java
+        repo: https://github.com/karpfenprofessor/uvl_merger
+      - name: Varflix
+        by: JKU Linz
+        desc: Variability mining with a GUI that builds UVL models from sets of input variants.
+        lang: Java
+        repo: https://github.com/litcpslab/VariabilityMining
+
+  - key: libs
+    label: Libraries
+    blurb: Build UVL support into your own tool.
+    items:
+      - name: uvl-parser
+        by: UVL community
+        desc: Reference ANTLR grammar and parsers for Java, Python and JavaScript (the JS target is the UVL.js work).
+        lang: Java · Python · JS
+        repo: https://github.com/Universal-Variability-Language/uvl-parser
+        org_repo: uvl-parser
+        pkg: pip install uvlparser
+      - name: java-fm-metamodel
+        by: UVL community
+        desc: Parse UVL into an object model, edit features and constraints, convert between language levels and write UVL back.
+        lang: Java
+        repo: https://github.com/Universal-Variability-Language/java-fm-metamodel
+        org_repo: java-fm-metamodel
+      - name: flamapy-fw
+        by: University of Seville
+        desc: Plugin-based core of Flamapy with base classes for metamodels, operations and transformations.
+        lang: Python
+        url: https://docs.flamapy.org
+        repo: https://github.com/flamapy/flamapy_fw
+        pkg: pip install flamapy-fw
+      - name: flamapy.js
+        by: Univ. A Coruña & Seville
+        desc: Brings Flamapy UVL analysis to any web or Node app via Pyodide/WebAssembly.
+        lang: JavaScript
+        repo: https://github.com/diverso-lab/flamapy.js
+        pkg: npm install @lbdudc/flamapy.js
+        doi: 10.1145/3715340.3715437
+      - name: tree-sitter-uvl
+        by: UVL community
+        desc: Tree-sitter grammar for fast, error-tolerant UVL parsing and highlighting.
+        lang: C · JS
+        repo: https://github.com/Universal-Variability-Language/uvl-lsp/tree/master/tree-sitter-uvl
+      - name: Behavioral Feature Model Toolkit
+        by: Community
+        desc: Java toolkit for behavioral feature models with UVL and VIBeS interoperability.
+        lang: Java
+        repo: https://github.com/sfortz/BehavioralFeatureModel
+
+  - key: data
+    label: Models & datasets
+    blurb: Real-world models, benchmarks and generators.
+    items:
+      - name: UVLHub
+        by: University of Seville & partners
+        desc: Open-science repository of UVL datasets with Zenodo DOIs and built-in Flamapy analysis.
+        lang: Web
+        url: https://www.uvlhub.io
+        repo: https://github.com/diverso-lab/uvlhub
+        doi: 10.1016/j.jss.2024.112150
+      - name: uvl-models
+        by: UVL community
+        desc: Curated real-world variability models converted to UVL, organized by origin and domain. Pull requests welcome.
+        lang: UVL
+        repo: https://github.com/Universal-Variability-Language/uvl-models
+        org_repo: uvl-models
+      - name: Feature-Model Benchmark
+        by: University of Ulm & partners
+        desc: 2,518 real-world feature models from the literature, exportable as UVL or DIMACS.
+        lang: UVL · DIMACS
+        repo: https://github.com/SoftVarE-Group/feature-model-benchmark
+        doi: 10.1145/3646548.3672590
+      - name: UVL Generator
+        by: University of Ulm
+        desc: Generates random or property-controlled UVL models covering the full language, with optional SMT checks.
+        lang: Java
+        repo: https://github.com/SoftVarE-Group/uvlgenerator
+        doi: 10.1145/3646548.3676602
+      - name: Restaurant-domain dataset
+        by: University of Málaga
+        desc: 53 real-world UVL models from restaurant menus that exercise UVL's full expressiveness.
+        lang: UVL
+        repo: https://github.com/jmhorcas/restaurant-domain
+        doi: 10.1145/3744915.3748468
+      - name: bdds4fms
+        by: Univ. Málaga & UNED
+        desc: Dataset and scripts building binary decision diagrams for the UVL models of the feature-model benchmark.
+        lang: Python
+        repo: https://github.com/jmhorcas/bdds4fms
+        doi: 10.1038/s41597-026-07841-9
+      - name: Flamapy solver benchmark
+        by: University of Seville
+        desc: Reproducible benchmark of Flamapy's PySAT, BDD and Z3 backends over 1,611 UVL models from UVLHub.
+        lang: Python
+        repo: https://github.com/diverso-lab/2026-flamapy-benchmark
+        doi: 10.5281/zenodo.20156321
+
+  - key: quality
+    label: Quality & semantics
+    blurb: Validate datasets and pin down what UVL means.
+    items:
+      - name: UVL Sentinel
+        by: University of Seville
+        desc: Scans large UVL datasets, reports syntax errors and auto-fixes common mistakes with correction patterns.
+        lang: Python
+        url: https://arxiv.org/abs/2403.18482
+        repo: https://github.com/diverso-lab/uvl-sentinel
+      - name: mech-uvl
+        by: Community
+        desc: Mechanized Dafny semantics of UVL with a CLI that checks well-formedness and types and infers language levels.
+        lang: Dafny · C#
+        repo: https://github.com/mech-uvl/mech-uvl
+
+  - key: ai
+    label: AI & LLMs
+    blurb: Let assistants read, generate and analyze UVL.
+    items:
+      - name: flamapy-mcp
+        by: Univ. Seville & A Coruña
+        desc: Official MCP server that lets LLM assistants validate and analyze UVL models with Flamapy.
+        lang: Python
+        repo: https://github.com/flamapy/flamapy-mcp
+        pkg: uvx flamapy-mcp
+      - name: UVL Analyzer MCP
+        by: University of A Coruña
+        desc: Node MCP server exposing atomic sets, core and dead features and configuration counts to AI assistants.
+        lang: JavaScript
+        repo: https://github.com/lbdudc/mcp-fm-analyzer
+        pkg: npm install @lbdudc/mcp-uvl-analyzer
+      - name: VariaBlens
+        by: University of A Coruña
+        desc: Web workbench that combines a UVL editor with an AI chat running Flamapy analyses.
+        lang: Web
+        url: https://variablens.lbd.org.es
+        repo: https://github.com/lbdudc/variablens
+      - name: GCD for UVL
+        by: Community
+        desc: Generates UVL from natural language with local LLMs using grammar-constrained decoding over the official grammar.
+        lang: Python
+        repo: https://github.com/johannesstuempfle/gcd-for-uvl
+      - name: SLM UVL fine-tuning
+        by: Community
+        desc: LoRA fine-tuning pipeline so small language models produce valid UVL from natural-language descriptions.
+        lang: Python
+        repo: https://github.com/johannesstuempfle/slm-uvl-finetuning
+      - name: llms4uvl
+        by: University of Málaga
+        desc: Builds UVL knowledge bases and evaluates LLM-generated UVL models against ground truth.
+        lang: Python
+        repo: https://github.com/jmhorcas/llms4uvl
+      - name: UVL Learner
+        by: Community
+        desc: Constraint-acquisition research code that learns UVL constraints and tree structure from a SAT oracle.
+        lang: Python
+        repo: https://github.com/HelgeS/varde26-uvl-learner
+
+  - key: apps
+    label: UVL in the wild
+    blurb: Domains already modelled with UVL.
+    items:
+      - name: Kubernetes feature model
+        by: University of Málaga
+        desc: Synthesizes a UVL model of Kubernetes configuration options from its OpenAPI schemas.
+        lang: Python
+        repo: https://github.com/CAOSD-group/fm-json-kubernetes
+        doi: 10.1007/978-3-032-15538-2_23
+      - name: cargo-feature-analyzer
+        by: Community
+        desc: Synthesizes UVL feature models of Rust crates from Cargo.toml and crates.io data.
+        lang: Rust
+        repo: https://github.com/Bjarkehp/cargo-feature-analyzer
+      - name: jMetal Variability
+        by: University of Málaga
+        desc: Configures jMetal multi-objective metaheuristics from UVL feature models without writing code.
+        lang: Java
+        repo: https://github.com/jMetal/jmetal-variability
+      - name: amlops
+        by: IMT · LIRMM
+        desc: Variability-aware low-code DSL for MLOps pipelines that exports its feature model in UVL.
+        lang: Python
+        url: https://adaptivemlops.wp.imt.fr/
+        repo: https://github.com/xquesnot/amlops
+      - name: Drone propeller SPL
+        by: University of Seville
+        desc: UVL model of fixed-pitch drone propellers with a physical-feasibility validator and design generator.
+        lang: Web
+        url: https://spldroneprop.diversolab.net
+        doi: 10.5281/zenodo.20148834
+      - name: YOLOv11 UVL configurator
+        by: University of Seville
+        desc: Models YOLOv11 face-detection settings in UVL and turns valid configurations into training parameters.
+        lang: Python
+        repo: https://github.com/diverso-lab/yolo-uvl-face-detection
+      - name: SPL for visualization design
+        by: University of Seville
+        desc: Generates best-practice data visualizations from UVL models of the visualization design process.
+        lang: Python · LaTeX
+        repo: https://github.com/diverso-lab/spl_visualization_design
+        doi: 10.1016/j.jss.2024.112029

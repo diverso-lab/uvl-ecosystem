@@ -69,17 +69,47 @@
   $$('[data-tabs]').forEach(function (el) { initTabs(el.matches('[role="tablist"]') ? el : $('[role="tablist"]', el)); });
 
   /* ---------- Filter chips ---------- */
-  var filterTargets = { tools: '#eco-tools .card', pubs: '.pubs li' };
-  $$('[data-filter]').forEach(function (group) {
-    var items = $$(filterTargets[group.dataset.filter]);
-    $$('.chip', group).forEach(function (chip) {
+  function chipGroup(group, onChange) {
+    var chips = $$('.chip', group);
+    chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
-        $$('.chip', group).forEach(function (c) { c.setAttribute('aria-pressed', c === chip); });
-        var v = chip.dataset.value;
-        items.forEach(function (it) { it.hidden = v !== 'all' && it.dataset.cat !== v; });
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip); });
+        onChange(chip.dataset.value);
       });
     });
-  });
+  }
+
+  /* Publications: category chips */
+  var pubGroup = $('[data-filter="pubs"]');
+  if (pubGroup) {
+    var pubs = $$('.pubs li');
+    chipGroup(pubGroup, function (v) {
+      pubs.forEach(function (it) { it.hidden = v !== 'all' && it.dataset.cat !== v; });
+    });
+  }
+
+  /* Tool catalogue: category chips + free-text search */
+  var toolGroup = $('[data-filter="tools"]');
+  if (toolGroup) {
+    var cards = $$('#eco-tools .card.tool'), blocks = $$('#eco-tools .cat-block');
+    var search = $('#tool-search'), countEl = $('#tool-count'), emptyEl = $('#tool-empty');
+    var state = { cat: 'all', q: '' };
+    var apply = function () {
+      var terms = state.q.toLowerCase().split(/\s+/).filter(Boolean), shown = 0;
+      cards.forEach(function (c) {
+        var ok = (state.cat === 'all' || c.dataset.cat === state.cat) &&
+          terms.every(function (t) { return c.dataset.search.indexOf(t) >= 0; });
+        c.hidden = !ok;
+        if (ok) shown++;
+      });
+      blocks.forEach(function (b) { b.hidden = !$$('.card.tool:not([hidden])', b).length; });
+      countEl.textContent = shown + ' of ' + cards.length + ' tools';
+      emptyEl.hidden = shown > 0;
+    };
+    chipGroup(toolGroup, function (v) { state.cat = v; apply(); });
+    search.addEventListener('input', function () { state.q = search.value; apply(); });
+    apply();
+  }
 
   /* ---------- Theme & menu ---------- */
   var root = document.documentElement;

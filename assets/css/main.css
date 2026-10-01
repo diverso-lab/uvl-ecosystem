@@ -272,6 +272,81 @@ code { font-family: var(--mono); font-size: .9em; }
 .form-status.ok { color: #1a8f4c; }
 .form-status.err { color: #c43c3c; }
 
+/* ---------- Ecosystem catalogue ---------- */
+.eco-numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 8px; }
+.eco-numbers div, .mv-stats div { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; display: grid; }
+.eco-numbers strong, .mv-stats strong { font: 600 1.9rem var(--mono); color: var(--accent); line-height: 1.2; }
+.eco-numbers span, .mv-stats span { font-size: .86rem; color: var(--muted); }
+.featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.feat {
+  background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--brand);
+  border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow);
+}
+.feat h3 { font-size: 1.3rem; margin: 0; }
+.feat-tag { font: 600 .72rem var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin: 0; }
+.feat-by, .card-by { font-size: .82rem; color: var(--muted); margin: 0; flex: none !important; }
+.feat-desc { font-size: .93rem; margin: 4px 0; flex: 1; }
+.plugins { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; }
+.install { display: grid; gap: 6px; margin-top: 4px; }
+.install code, .pkg {
+  display: block; background: var(--code-bg); color: var(--code-text); font-size: .8rem; padding: 7px 10px;
+  border-radius: 6px; overflow-x: auto; white-space: nowrap;
+}
+.pkg { margin-top: 4px; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 8px 0 0; font-size: .9rem; font-weight: 600; }
+.eco-switch { margin-top: 56px; }
+.catalog-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-bottom: 14px; }
+.search { display: flex; align-items: center; gap: 8px; flex: 1 1 320px; max-width: 480px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0 12px; color: var(--muted); }
+.search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.search input { border: 0; outline: 0; background: transparent; color: var(--text); font: 400 .95rem var(--font); padding: 10px 0; width: 100%; }
+.chip-n { opacity: .7; font-size: .78em; margin-left: 2px; }
+.cat-block { margin-top: 28px; }
+.cat-block[hidden] { display: none; }
+.cat-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 12px; }
+.cat-head h3 { margin: 0; font-size: 1.1rem; }
+.cat-head p { margin: 0; font-size: .9rem; }
+.card.tool:hover { transform: none; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card h4 { margin: 0; font-size: 1.02rem; }
+.card-links { display: inline-flex; gap: 12px; margin-left: auto; font-weight: 600; }
+.empty { text-align: center; padding: 32px 0; }
+.cta-strip {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  margin-top: 36px; padding: 20px 24px; border-radius: 12px; background: var(--accent-soft);
+}
+.cta-strip div { display: grid; gap: 2px; }
+
+/* ---------- MODEVAR ---------- */
+#modevar { background: linear-gradient(180deg, var(--accent-soft), var(--bg) 340px); }
+.modevar-head { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+.modevar-head .cta-row { margin-bottom: 0; }
+.mv-stats { display: grid; gap: 12px; }
+.editions {
+  list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-auto-flow: column; grid-auto-columns: 230px;
+  gap: 12px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x mandatory;
+}
+.edition { scroll-snap-align: start; }
+.edition a {
+  display: grid; gap: 4px; height: 100%; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; color: var(--text);
+}
+.edition a:hover { border-color: var(--accent); text-decoration: none; }
+.edition.star a { border-color: var(--brand); box-shadow: inset 0 3px 0 var(--brand); }
+.ed-n { font: 600 .8rem var(--mono); color: var(--accent); }
+.ed-venue { font-weight: 700; font-size: 1.05rem; }
+.ed-meta { font-size: .8rem; color: var(--muted); }
+.ed-hl { font-size: .86rem; color: var(--muted); margin-top: 4px; }
+.mv-grid { display: grid; grid-template-columns: 1fr 1fr 300px; gap: 16px; margin-top: 32px; align-items: start; }
+.mv-grid h3 { font-size: 1.15rem; }
+.talks { margin: 12px 0 0; padding-left: 18px; font-size: .9rem; display: grid; gap: 6px; }
+.talks a { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 2px; }
+.mv-side { display: grid; gap: 16px; }
+.next ul, .sc { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; font-size: .9rem; }
+.next li strong { display: block; margin-top: 4px; }
+.next li p { margin: 2px 0 0; font-size: .86rem; }
+.sc { gap: 6px; }
+.small { font-size: .82rem; margin: 12px 0 0; }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 48px 0 24px; font-size: .92rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
@@ -283,6 +358,10 @@ code { font-family: var(--mono); font-size: .9em; }
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
   .hero-grid, .project-grid, .contact-grid, .cite { grid-template-columns: 1fr; }
+  .featured { grid-template-columns: repeat(2, 1fr); }
+  .eco-numbers { grid-template-columns: repeat(2, 1fr); }
+  .modevar-head, .mv-grid { grid-template-columns: 1fr; }
+  .mv-stats { grid-template-columns: repeat(3, 1fr); }
   .concepts { grid-template-columns: repeat(3, 1fr); }
   .team { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
@@ -311,6 +390,7 @@ code { font-family: var(--mono); font-size: .9em; }
   .hero { padding-top: 48px; }
 }
 @media (max-width: 560px) {
+  .featured, .mv-stats { grid-template-columns: 1fr; }
   .why, .concepts, .team, .field-row, .footer-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
   .contact-form { padding: 20px; }

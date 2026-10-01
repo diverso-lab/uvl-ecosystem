@@ -1,0 +1,79 @@
+{% assign mv = site.data.modevar %}
+<section class="section" id="modevar">
+  <div class="wrap">
+    <header class="section-head modevar-head">
+      <div>
+        <p class="eyebrow">MODEVAR</p>
+        <h2>Where UVL is designed, together</h2>
+        <p class="lead">UVL was born at <strong>MODEVAR</strong>, the International Workshop on Languages for Modelling Variability. Since 2019 it has gathered researchers, tool builders and companies to agree on a common language, and it is still where UVL evolves.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="{{ mv.site }}" target="_blank" rel="noopener">Visit MODEVAR</a>
+          <a class="btn btn-ghost" href="{{ mv.history }}" target="_blank" rel="noopener">Full history</a>
+        </div>
+      </div>
+      <div class="mv-stats">
+        <div><strong>10</strong><span>numbered editions</span></div>
+        <div><strong>{{ mv.editions.first.year }}</strong><span>first workshop, Paris</span></div>
+        <div><strong>3</strong><span>host conferences (SPLC, VaMoS, VARIABILITY) plus online editions</span></div>
+      </div>
+    </header>
+
+    <ol class="editions" aria-label="MODEVAR editions">
+      {% for e in mv.editions %}
+      <li class="edition{% if e.star %} star{% endif %}">
+        <a href="{{ e.url }}" target="_blank" rel="noopener">
+          <span class="ed-n">{% if e.n %}#{{ e.n }}{% else %}Online{% endif %}</span>
+          <span class="ed-venue">{{ e.venue }}</span>
+          <span class="ed-meta">{{ e.date }} · {{ e.place }}</span>
+          <span class="ed-hl">{{ e.highlight }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+
+    <div class="mv-grid">
+      <article class="panel mv-latest">
+        <p class="eyebrow">Latest · {{ mv.latest.date }}</p>
+        <h3>{{ mv.latest.title }}</h3>
+        <p class="muted">{{ mv.latest.place }}. The first MODEVAR at VARIABILITY, the new conference that merges SPLC, VaMoS and ICSR.</p>
+        <ul class="talks">
+          {% for t in mv.latest.talks %}<li>{{ t }}</li>{% endfor %}
+        </ul>
+        <p class="links">
+          <a href="{{ mv.latest.program }}" target="_blank" rel="noopener">Program</a>
+          <a href="{{ mv.latest.slides }}" target="_blank" rel="noopener">Slides</a>
+        </p>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">{{ mv.online_2026.date }}</p>
+        <h3>{{ mv.online_2026.title }}</h3>
+        <p class="muted">A free, open session with tool demos and industry use cases, where the UVLEP process was launched.</p>
+        <ul class="talks">
+          {% for t in mv.online_2026.talks %}
+          <li>{% if t.slides %}<a href="{{ t.slides }}" target="_blank" rel="noopener">{{ t.title }}</a>{% else %}{{ t.title }}{% endif %} <span class="muted">· {{ t.who }}</span></li>
+          {% endfor %}
+        </ul>
+        <p class="links"><a href="{{ mv.online_2026.program }}" target="_blank" rel="noopener">Program</a></p>
+      </article>
+
+      <aside class="mv-side">
+        <div class="panel next">
+          <h3>Coming next</h3>
+          <ul>
+            {% for n in mv.next %}
+            <li><span class="tag">{{ n.when }}</span><strong>{{ n.what }}</strong><p class="muted">{{ n.detail }}</p></li>
+            {% endfor %}
+          </ul>
+          <p class="muted small">Dates and calls are announced on <a href="{{ mv.site }}">modevar.github.io</a>.</p>
+        </div>
+        <div class="panel">
+          <h3>Steering committee</h3>
+          <ul class="sc">
+            {% for p in mv.steering_committee %}<li>{{ p.name }} <span class="muted">· {{ p.affiliation }}</span></li>{% endfor %}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

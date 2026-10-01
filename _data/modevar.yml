@@ -1,0 +1,150 @@
+# MODEVAR — International Workshop on Languages for Modelling Variability.
+# Source: modevar.github.io (all edition sites verified 2026-10-01).
+site: https://modevar.github.io/
+history: https://modevar.github.io/history/
+
+editions:
+  - n: 1
+    year: 2019
+    venue: SPLC'19
+    place: Paris, France
+    date: 10 Sep 2019
+    url: https://modevar.github.io/2019/
+    highlight: The kick-off. Ten position papers on a common feature-modelling language, including language levels and usage scenarios.
+  - n: 2
+    year: 2020
+    venue: VaMoS'20
+    place: Magdeburg, Germany
+    date: 4 Feb 2020
+    url: https://modevar.github.io/vamos-2020/
+    highlight: Working meeting on the design trade-offs of a universal variability language.
+  - n: 3
+    year: 2020
+    venue: SPLC'20
+    place: Online
+    date: 20 Oct 2020
+    url: https://modevar.github.io/splc-2020/
+    highlight: UVL is presented and named. First design of the Flamapy analysis framework.
+    star: true
+  - n: 4
+    year: 2021
+    venue: SPLC'21
+    place: Online
+    date: 6 Sep 2021
+    url: https://modevar.github.io/2021/
+    highlight: UVL lands in FeatureIDE and the first prototype of a model repository, the seed of UVLHub.
+  - n: 5
+    year: 2022
+    venue: SPLC'22
+    place: Graz, Austria
+    date: 13 Sep 2022
+    url: https://modevar.github.io/2022/
+    highlight: First full UVL tutorial and a UVL ⇄ pure::variants bridge to industry.
+  - n: 6
+    year: 2024
+    venue: VaMoS'24
+    place: Bern, Switzerland
+    date: 6 Feb 2024
+    url: https://modevar.github.io/vamos-2024/
+    highlight: Keynote "24 Reasons Why Variability Models Are Not Yet Universal". Demos of UVLHub, UVL Sentinel and torte.
+  - n: 7
+    year: 2024
+    venue: SPLC'24
+    place: Luxembourg
+    date: 2 Sep 2024
+    url: https://modevar.github.io/splc-2024/
+    highlight: UVL model generation, configuration formats and industrial adoption of UVL.
+  - n: 8
+    year: 2025
+    venue: VaMoS'25
+    place: Rennes, France
+    date: 3 Feb 2025
+    url: https://modevar.github.io/vamos-2025/
+    highlight: Lightning talks, breakout groups and a hands-on UVL tutorial.
+  - n: 9
+    year: 2025
+    venue: SPLC'25
+    place: A Coruña, Spain
+    date: 1 Sep 2025
+    url: https://modevar.github.io/splc-2025/
+    highlight: Joint with Re:Volution. Variability modelling for digital twins and a two-session UVL tutorial.
+  - n: null
+    year: 2026
+    venue: Online edition
+    place: Online
+    date: 29 Apr 2026
+    url: https://modevar.github.io/online-2026/
+    highlight: Ten tool demos and industry use cases, launch of the UVLEP process and the UVL roadmap discussion.
+    star: true
+  - n: 10
+    year: 2026
+    venue: VARIABILITY'26
+    place: Limassol, Cyprus
+    date: 29 Sep 2026
+    url: https://modevar.github.io/
+    highlight: First edition at VARIABILITY, the conference that merges SPLC, VaMoS and ICSR. Ten talks and a day on the future of UVL.
+
+latest:
+  title: MODEVAR@VARIABILITY 2026
+  date: 29 Sep 2026
+  place: Limassol, Cyprus
+  program: https://modevar.github.io/program/
+  slides: https://uni-siegen.sciebo.de/s/kpxymQLSMAAeP4L
+  talks:
+    - Introduction to Feature Modeling and UVL
+    - Overview of Existing UVL Applications
+    - "Order Matters: An UVL Extension for Configuration Sequences"
+    - "Varflix: A Tool for Semi-Automatic Variability Mining"
+    - Towards UVL-based variability modelling of drone propellers
+    - UVL-Supported Configuration for YOLOv11 Face Detection
+    - "SysML v2 à la Carte: Feature-Based Product Configuration with UVL"
+    - "Configurable Scheduling Problems: Modeling and Anomaly Detection"
+    - "VariabLens: LLM-Enhanced Interactive Feature Model Analysis and Comparison"
+    - "A Unified Visual Representation of UVL Models in Scientific Literature: The uvlhighlight Package"
+    - "Mech-uvl: A Mechanized Semantic Toolkit for the Universal Variability Language"
+
+online_2026:
+  title: MODEVAR Online Edition 2026
+  date: 29 Apr 2026
+  program: https://modevar.github.io/online-2026/program/
+  talks:
+    - title: "UVL and UVLHub: enhancements and new applications"
+      who: University of Seville
+      slides: https://diversolab.us.es/wp-content/uploads/2026/04/Modevar-2026-UVL-and-UVLHUB-enhancements-and-new-applications.pdf
+    - title: "FlamapyIDE 2.0: What's Next for Client-Side AAFM"
+      who: University of Seville
+      slides: https://diversolab.us.es/wp-content/uploads/2026/04/modevar-ide.pdf
+    - title: Modular Software Product Lines with UVL
+      who: University of A Coruña
+    - title: "UVL feature model configuration selection with simulated annealing: The FMCooler tool"
+      who: Tecnalia
+    - title: UVL-Based Prompt Variability for AI Agents in UX design processes
+      who: University of Seville
+      slides: https://diversolab.us.es/wp-content/uploads/2026/04/AI-Agents-in-UX-design_MODEVAR.pdf
+    - title: "SENSOLIVE: UVL for Variability Management in Deficit Irrigation of Olive Groves"
+      who: University of Seville
+      slides: https://diversolab.us.es/wp-content/uploads/2026/04/SENSOLIVE_MODEVAR_2026.pdf
+    - title: "uvllang: Towards a bidirectional UVL Parser"
+      who: DHBW Heidenheim
+    - title: Variability in Cyber Physical Production Systems
+      who: JKU Linz
+    - title: "What UVL Made Us Invent: An Industrial Feature Model Toolchain and Its Unresolved Tensions"
+      who: Trusted Shops
+    - title: "Order Matters: Configuration Sequences in Feature Models"
+      who: TU Wien
+
+next:
+  - when: March 2027
+    what: MODEVAR Online 2027
+    detail: Online edition organised by the University of Seville, open to industry participants.
+  - when: 2027
+    what: MODEVAR@VARIABILITY 2027
+    detail: Eleventh edition, co-located with VARIABILITY 2027.
+
+steering_committee:
+  - { name: David Benavides, affiliation: University of Seville }
+  - { name: Rick Rabiser, affiliation: JKU Linz & SCCH }
+  - { name: Thomas Thüm, affiliation: TU Braunschweig }
+  - { name: Kevin Feichtinger, affiliation: KIT }
+  - { name: José A. Galindo, affiliation: University of Seville }
+  - { name: Chico Sundermann, affiliation: TU Braunschweig }

@@ -1,24 +1,28 @@
 - year: 2019
-  title: MODEVAR initiative
-  text: First MODEVAR workshop at SPLC sets the goal of a common variability language.
-  doi: https://doi.org/10.1145/3307630.3342398
+  title: MODEVAR kick-off
+  text: The first MODEVAR workshop (SPLC'19, Paris) sets the goal of a common feature-modelling language.
+  url: https://modevar.github.io/2019/
+- year: 2020
+  title: UVL is born
+  text: The UVL proposal is presented and named at MODEVAR@SPLC'20, together with the first design of Flamapy.
+  url: https://modevar.github.io/splc-2020/
 - year: 2021
-  title: UVL is presented
-  text: "\"Yet another textual variability language?\" introduces UVL at SPLC'21."
+  title: Reference paper & first tools
+  text: "\"Yet another textual variability language?\" at SPLC'21. UVL lands in FeatureIDE and a first model repository appears."
   doi: https://doi.org/10.1145/3461001.3471145
 - year: 2023
   title: Language levels & UVLS
-  text: Language levels, conversion strategies and the UVLS language server at SPLC'23.
+  text: Language levels, conversion strategies and the UVLS language server at SPLC'23, plus a UVL tutorial.
   doi: https://doi.org/10.1145/3579028.3609013
 - year: 2024
-  title: UVLHub
-  text: An open-science data repository for UVL models, published in JSS.
+  title: UVLHub & UVL Sentinel
+  text: An open-science repository for UVL models is published in JSS, and UVL Sentinel validates whole datasets.
   doi: https://doi.org/10.1016/j.jss.2024.112150
 - year: 2025
   title: JSS paper & Best Paper Award
-  text: The reference UVL paper receives the JSS Best Paper Award (Regular Track). UVL.js and flamapy.IDE follow at VaMoS'25. The UVLEP process opens.
+  text: The reference UVL paper receives the JSS Best Paper Award. UVL.js and flamapy.IDE are presented at VaMoS'25.
   doi: https://doi.org/10.1016/j.jss.2024.112326
 - year: 2026
-  title: uvl-parser 0.5
-  text: New parser releases (0.5.0 in March, 0.5.1 in July) keep the grammar and bindings moving.
-  url: https://github.com/Universal-Variability-Language/uvl-parser/releases
+  title: Community process & VARIABILITY
+  text: MODEVAR Online launches the UVLEP process (April), uvl-parser 0.5 ships, and MODEVAR joins VARIABILITY'26 in Limassol (September).
+  url: https://modevar.github.io/

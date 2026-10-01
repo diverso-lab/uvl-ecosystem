@@ -8,6 +8,7 @@ url: "https://diverso-lab.github.io"
 baseurl: "/uvl-ecosystem"  # overridden by the Pages workflow at build time
 
 github_org: Universal-Variability-Language
+site_repo: diverso-lab/uvl-ecosystem   # where "add your tool" issues are opened
 
 # Contact form. GitHub Pages is static, so submissions go to an external
 # form backend (Formspree, Getform, Basin...). Paste the endpoint here.

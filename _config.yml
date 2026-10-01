@@ -4,8 +4,8 @@ description: >-
   UVL is a community-driven, textual language for feature models and variability
   models, born from the MODEVAR initiative and backed by a growing tool ecosystem.
 lang: en
-url: "https://diverso-lab.github.io"
-baseurl: "/uvl-ecosystem"  # overridden by the Pages workflow at build time
+url: "https://uvl-ecosystem.org"
+baseurl: ""  # the Pages workflow sets it at build time
 
 github_org: Universal-Variability-Language
 site_repo: diverso-lab/uvl-ecosystem   # where "add your tool" issues are opened

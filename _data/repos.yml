@@ -1,0 +1,34 @@
+# Repositories of the GitHub organization. Static values are a fallback;
+# stars, language and last push are refreshed live in the browser.
+product:
+  - name: uvl-parser
+    purpose: Grammar definition and reference parsers.
+    lang: ANTLR
+  - name: java-fm-metamodel
+    purpose: Java feature-model API on top of the parser.
+    lang: Java
+  - name: uvl-lsp
+    purpose: UVLS language server and VS Code client.
+    lang: Rust
+  - name: uvlhighlight
+    purpose: LaTeX syntax highlighting for UVL.
+    lang: TeX
+  - name: uvl-models
+    purpose: Public feature models in UVL.
+    lang: UVL
+  - name: UVLEP
+    purpose: UVL Enhancement Proposals and design discussions.
+    lang: Markdown
+  - name: Universal-Variability-Language.github.io
+    purpose: Source of the official website.
+    lang: Markdown
+academic:
+  - name: tutorial-splc-2023
+    purpose: Material for the UVL tutorial at SPLC'23.
+  - name: uvl-tutorials-material
+    purpose: Reusable material for UVL tutorials.
+  - name: uvl-evaluation-splc21
+    purpose: Evaluation project of the SPLC'21 UVL paper.
+  - name: bnf-uvl-parser
+    purpose: Original BNF/Clojure parser.
+    deprecated: true

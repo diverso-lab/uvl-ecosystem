@@ -1,0 +1,81 @@
+<section class="section" id="project">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Project</p>
+      <h2>Where UVL stands today</h2>
+      <p class="lead">UVL is actively maintained by a multi-university team, and its evolution is now driven by public enhancement proposals.</p>
+    </header>
+
+    <div class="stats">
+      <div class="stat"><span class="stat-value" id="stat-release">0.5.1</span><span class="stat-label">latest uvl-parser release</span></div>
+      <div class="stat"><span class="stat-value">{% assign n = 0 %}{% for c in site.data.tools %}{% assign n = n | plus: c.items.size %}{% endfor %}{{ n }}</span><span class="stat-label">tools in the ecosystem</span></div>
+      <div class="stat"><span class="stat-value" id="stat-repos">{{ site.data.repos.product.size | plus: site.data.repos.academic.size }}</span><span class="stat-label">public repositories</span></div>
+      <div class="stat"><span class="stat-value">{{ site.data.team.core.size }}</span><span class="stat-label">core institutions</span></div>
+    </div>
+
+    <div class="project-grid">
+      <div>
+        <h3 class="sub">Milestones</h3>
+        <ol class="timeline">
+          {% for m in site.data.timeline %}
+          <li>
+            <span class="tl-year">{{ m.year }}</span>
+            <div>
+              <strong>{{ m.title }}</strong>
+              <p>{{ m.text }} {% if m.doi %}<a href="{{ m.doi }}">Paper</a>{% elsif m.url %}<a href="{{ m.url }}">Releases</a>{% endif %}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <aside class="side">
+        <div class="panel">
+          <h3>Enhancement proposals</h3>
+          <p class="muted">Changes to the language go through UVLEPs. Proposals and pull requests appear here as soon as they are opened.</p>
+          <ul class="uvlep-list" id="uvlep-list">
+            <li class="muted">Loading proposals…</li>
+          </ul>
+          <a class="text-link" href="https://github.com/{{ site.github_org }}/UVLEP">UVLEP repository →</a>
+        </div>
+        <div class="panel">
+          <h3>MODEVAR workshop</h3>
+          <p class="muted">The design of UVL is discussed openly at the MODEVAR workshop series. Dates and calls for papers are announced on its website.</p>
+          <a class="text-link" href="https://modevar.github.io/">modevar.github.io →</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="cite" id="cite">
+      <div class="cite-copy">
+        <p class="eyebrow">How to cite</p>
+        <h3>{{ site.data.publications.cite.title }}</h3>
+        <p class="muted">{{ site.data.publications.cite.authors }}. <em>{{ site.data.publications.cite.venue }}</em>, {{ site.data.publications.cite.year }}.</p>
+        <p class="badge">★ {{ site.data.publications.cite.award }}</p>
+        <a class="text-link" href="https://doi.org/{{ site.data.publications.cite.doi }}">doi:{{ site.data.publications.cite.doi }}</a>
+      </div>
+      <div class="code-card">
+        <div class="code-head"><span class="file">BibTeX</span><button class="copy" type="button">Copy</button></div>
+        <pre><code>{{ site.data.publications.cite.bibtex | escape }}</code></pre>
+      </div>
+    </div>
+
+    <h3 class="sub">Publications</h3>
+    <div class="chips" data-filter="pubs" role="group" aria-label="Filter publications">
+      <button class="chip" aria-pressed="true" data-value="all">All</button>
+      {% for c in site.data.publications.categories %}<button class="chip" aria-pressed="false" data-value="{{ c.key }}">{{ c.label }}</button>{% endfor %}
+    </div>
+    <ul class="pubs">
+      {% assign papers = site.data.publications.papers | sort: "year" | reverse %}
+      {% for p in papers %}
+      <li data-cat="{{ p.cat }}">
+        <span class="pub-year">{{ p.year }}</span>
+        <div>
+          <a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>
+          <p class="muted">{{ p.authors }} · <em>{{ p.venue }}</em></p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="note">Missing a paper on UVL? <a href="https://github.com/{{ site.github_org }}/Universal-Variability-Language.github.io/issues">Let us know</a>.</p>
+  </div>
+</section>

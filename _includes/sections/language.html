@@ -1,0 +1,71 @@
+<section class="section" id="language">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Language</p>
+      <h2>UVL at a glance</h2>
+      <p class="lead">A feature model is a tree. Indentation gives the hierarchy, keywords give the relationship between a parent and its children, and constraints cover everything the tree cannot express.</p>
+    </header>
+
+    <div class="concepts">
+      <div class="concept"><code>mandatory</code><p>The child must be selected whenever its parent is.</p></div>
+      <div class="concept"><code>optional</code><p>The child may be selected if its parent is.</p></div>
+      <div class="concept"><code>or</code><p>At least one child is selected with the parent.</p></div>
+      <div class="concept"><code>alternative</code><p>Exactly one child is selected with the parent.</p></div>
+      <div class="concept"><code>constraints</code><p>Cross-tree propositional formulas over features, such as <code>A =&gt; B</code>.</p></div>
+    </div>
+
+    <h3 class="sub">Language levels</h3>
+    <p class="muted narrow">Tools do not need to support everything. UVL is split into stacked levels: a model declares the extensions it uses with <code>include</code>, and tools can convert models down to the level they understand.</p>
+
+    <div class="levels" data-tabs>
+      <div class="level-stack" role="tablist" aria-label="Language levels">
+        <button role="tab" aria-selected="true" aria-controls="lvl-boolean" id="tab-boolean" class="level" data-level="1">
+          <span class="level-name">Boolean</span>
+          <span class="level-ext">core · group cardinality</span>
+        </button>
+        <button role="tab" aria-selected="false" aria-controls="lvl-arith" id="tab-arith" class="level" data-level="2" tabindex="-1">
+          <span class="level-name">Arithmetic</span>
+          <span class="level-ext">attributes · aggregates · feature cardinality</span>
+        </button>
+        <button role="tab" aria-selected="false" aria-controls="lvl-type" id="tab-type" class="level" data-level="3" tabindex="-1">
+          <span class="level-name">Type</span>
+          <span class="level-ext">String/Integer/Real features · numeric &amp; string constraints</span>
+        </button>
+      </div>
+      <div class="level-panels">
+        <div role="tabpanel" id="lvl-boolean" aria-labelledby="tab-boolean" class="code-card">
+          <div class="code-head"><span class="file">Boolean level</span><button class="copy" type="button">Copy</button></div>
+          <pre><code class="uvl">{% include uvl.html file="boolean" %}</code></pre>
+        </div>
+        <div role="tabpanel" id="lvl-arith" aria-labelledby="tab-arith" class="code-card" hidden>
+          <div class="code-head"><span class="file">Arithmetic level</span><button class="copy" type="button">Copy</button></div>
+          <pre><code class="uvl">{% include uvl.html file="arithmetic" %}</code></pre>
+        </div>
+        <div role="tabpanel" id="lvl-type" aria-labelledby="tab-type" class="code-card" hidden>
+          <div class="code-head"><span class="file">Type level</span><button class="copy" type="button">Copy</button></div>
+          <pre><code class="uvl">{% include uvl.html file="type" %}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub">Composing models with imports</h3>
+    <p class="muted narrow">Large models can be split into submodels. A composing model imports them under an alias and references their features anywhere in the tree or in constraints.</p>
+    <div class="two-col">
+      <div class="code-card">
+        <div class="code-head"><span class="file">submodels/Sauces.uvl</span><button class="copy" type="button">Copy</button></div>
+        <pre><code class="uvl">{% include uvl.html file="sauces" %}</code></pre>
+      </div>
+      <div class="code-card">
+        <div class="code-head"><span class="file">sandwich.uvl</span><button class="copy" type="button">Copy</button></div>
+        <pre><code class="uvl">{% include uvl.html file="imports" %}</code></pre>
+      </div>
+    </div>
+
+    <div class="link-row">
+      <a class="btn btn-ghost" href="https://github.com/{{ site.github_org }}/uvl-parser/blob/main/uvl/UVLParser.g4">Full grammar</a>
+      <a class="btn btn-ghost" href="https://universal-variability-language.github.io/language/submodels">Submodel docs</a>
+      <a class="btn btn-ghost" href="https://github.com/{{ site.github_org }}/tutorial-splc-2023">SPLC'23 tutorial</a>
+      <a class="btn btn-ghost" href="https://github.com/{{ site.github_org }}/uvl-models">Example models</a>
+    </div>
+  </div>
+</section>

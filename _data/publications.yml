@@ -1,0 +1,142 @@
+cite:
+  authors: David Benavides, Chico Sundermann, Kevin Feichtinger, José A. Galindo, Rick Rabiser, Thomas Thüm
+  title: "UVL: Feature modelling with the Universal Variability Language"
+  venue: Journal of Systems and Software, vol. 225, 112326
+  year: 2025
+  doi: 10.1016/j.jss.2024.112326
+  award: JSS Best Paper Award 2025 · Regular Track
+  bibtex: |-
+    @article{Benavides2025UVL,
+      title     = {UVL: Feature modelling with the Universal Variability Language},
+      author    = {Benavides, David and Sundermann, Chico and Feichtinger, Kevin and
+                   Galindo, Jos{\'e} A. and Rabiser, Rick and Th{\"u}m, Thomas},
+      journal   = {Journal of Systems and Software},
+      volume    = {225},
+      pages     = {112326},
+      year      = {2025},
+      publisher = {Elsevier},
+      doi       = {10.1016/j.jss.2024.112326}
+    }
+
+categories:
+  - { key: design, label: Language design }
+  - { key: tools, label: Tool ecosystem }
+  - { key: exchange, label: Model exchange }
+  - { key: other, label: Other work }
+  - { key: background, label: Background }
+
+papers:
+  - cat: design
+    year: 2021
+    authors: Chico Sundermann, Kevin Feichtinger, Dominik Engelhardt, Rick Rabiser, Thomas Thüm
+    title: "Yet another textual variability language? A community effort towards a unified language"
+    venue: SPLC '21
+    doi: 10.1145/3461001.3471145
+  - cat: design
+    year: 2023
+    authors: Chico Sundermann, Stefan Vill, Thomas Thüm, Kevin Feichtinger, Prankur Agarwal, Rick Rabiser, José A. Galindo, David Benavides
+    title: "UVLParser: Extending UVL with Language Levels and Conversion Strategies"
+    venue: SPLC '23 Tool Track
+    doi: 10.1145/3579028.3609013
+  - cat: tools
+    year: 2020
+    authors: José A. Galindo, David Benavides
+    title: "A Python framework for the automated analysis of feature models: A first step to integrate community efforts"
+    venue: MODEVAR@SPLC '20
+    doi: 10.1145/3382026.3425773
+  - cat: tools
+    year: 2021
+    authors: Kevin Feichtinger, Johann Stöbich, Dario Romano, Rick Rabiser
+    title: "TRAVART: An Approach for Transforming Variability Models"
+    venue: VaMoS '21
+    doi: 10.1145/3442391.3442400
+  - cat: tools
+    year: 2021
+    authors: Chico Sundermann, Tobias Heß, Dominik Engelhardt, Rahel Arens, Johannes Herschel, Kevin Jedelhauser, Benedikt Jutz, Sebastian Krieter, Ina Schaefer
+    title: "Integration of UVL in FeatureIDE"
+    venue: MODEVAR@SPLC '21
+    doi: 10.1145/3461002.3473940
+  - cat: tools
+    year: 2022
+    authors: Jose M. Horcas, José A. Galindo, Mónica Pinto, Lidia Fuentes, David Benavides
+    title: "FM fact label: a configurable and interactive visualization of feature model characterizations"
+    venue: SPLC '22
+    doi: 10.1145/3503229.3547025
+  - cat: tools
+    year: 2023
+    authors: Jacob Loth, Chico Sundermann, Tobias Schrull, Thilo Brugger, Felix Rieg, Thomas Thüm
+    title: "UVLS: A Language Server Protocol For UVL"
+    venue: SPLC '23 Tool Track
+    doi: 10.1145/3579028.3609014
+  - cat: tools
+    year: 2023
+    authors: José A. Galindo, Jose-Miguel Horcas, Alexander Felfernig, David Fernandez-Amoros, David Benavides
+    title: "FLAMA: A collaborative effort to build a new framework for the automated analysis of feature models"
+    venue: SPLC '23 Tool Track
+    doi: 10.1145/3579028.3609008
+  - cat: tools
+    year: 2024
+    authors: Chico Sundermann, Tobias Heß, Rahel Sundermann, Elias Kuiter, Sebastian Krieter, Thomas Thüm
+    title: "Generating Feature Models with UVL's Full Expressiveness"
+    venue: MODEVAR '24
+    doi: 10.1145/3646548.3676602
+  - cat: tools
+    year: 2025
+    authors: Victor Lamas, Maria-Isabel Limaylla-Lunarejo, Miguel R. Luaces, David Romero-Organvidez, José A. Galindo, David Benavides
+    title: "UVL.js: Experiences on using UVL in the JavaScript Ecosystem"
+    venue: VaMoS '25
+    doi: 10.1145/3715340.3715437
+  - cat: tools
+    year: 2025
+    authors: Francisco Sebastian Benitez, José A. Galindo, David Romero-Organvidez, David Benavides
+    title: "UVL web-based editing and analysis with flamapy.ide"
+    venue: VaMoS '25
+    doi: 10.1145/3715340.3715436
+  - cat: exchange
+    year: 2021
+    authors: David Romero, José A. Galindo, Jose-Miguel Horcas, David Benavides
+    title: "A first prototype of a new repository for feature model exchange and knowledge sharing"
+    venue: SPLC '21
+    doi: 10.1145/3461002.3473949
+  - cat: exchange
+    year: 2024
+    authors: David Romero-Organvidez, José A. Galindo, Chico Sundermann, Jose-Miguel Horcas, David Benavides
+    title: "UVLHub: A feature model data repository using UVL and open science principles"
+    venue: Journal of Systems and Software
+    doi: 10.1016/j.jss.2024.112150
+  - cat: exchange
+    year: 2024
+    authors: Chico Sundermann, Vincenzo Francesco Brancaccio, Elias Kuiter, Sebastian Krieter, Tobias Heß, Thomas Thüm
+    title: "Collecting Feature Models from the Literature"
+    venue: SPLC '24
+    doi: 10.1145/3646548.3672590
+  - cat: other
+    year: 2024
+    authors: Prankur Agarwal, Kevin Feichtinger, Klaus Schmid, Holger Eichelberger, Rick Rabiser
+    title: "On the Challenges of Transforming UVL to IVML"
+    venue: MODEVAR@VaMoS '24
+    doi: 10.48550/arXiv.2403.01952
+  - cat: other
+    year: 2022
+    authors: Dario Romano, Kevin Feichtinger, Danilo Beuche, Uwe Ryssel, Rick Rabiser
+    title: "Bridging the gap between academia and industry: transforming the universal variability language to pure::variants and back"
+    venue: MODEVAR@SPLC '22
+    doi: 10.1145/3503229.3547056
+  - cat: background
+    year: 2019
+    authors: Maurice H. ter Beek, Klaus Schmid, Holger Eichelberger
+    title: "Textual Variability Modeling Languages: An Overview and Considerations"
+    venue: MODEVAR@SPLC '19
+    doi: 10.1145/3307630.3342398
+  - cat: background
+    year: 2019
+    authors: Thorsten Berger, Philippe Collet
+    title: "Usage Scenarios for a Common Feature Modeling Language"
+    venue: MODEVAR@SPLC '19
+    doi: 10.1145/3307630.3342403
+  - cat: background
+    year: 2019
+    authors: Thomas Thüm, Christoph Seidl, Ina Schaefer
+    title: "On Language Levels for Feature Modeling Notations"
+    venue: MODEVAR@SPLC '19
+    doi: 10.1145/3307630.3342404

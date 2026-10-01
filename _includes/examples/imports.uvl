@@ -1,0 +1,13 @@
+imports
+    submodels.Sauces as Sauce
+
+features
+    Sandwich
+        mandatory
+            Bread
+        optional
+            Sauce.Type
+            Cheese
+
+constraints
+    Sauce.Ketchup => Cheese

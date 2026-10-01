@@ -1,0 +1,69 @@
+<section class="section alt" id="ecosystem">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Ecosystem</p>
+      <h2>Tools and repositories</h2>
+      <p class="lead">Pick what you want to do, or browse the repositories of the organization directly. Stars and activity come live from GitHub.</p>
+    </header>
+
+    <div class="segmented" data-tabs role="tablist" aria-label="Ecosystem view">
+      <button role="tab" aria-selected="true" aria-controls="eco-tools" id="tab-eco-tools">Tools</button>
+      <button role="tab" aria-selected="false" aria-controls="eco-repos" id="tab-eco-repos" tabindex="-1">Repositories</button>
+    </div>
+
+    <div id="eco-tools" role="tabpanel" aria-labelledby="tab-eco-tools">
+      <div class="chips" data-filter="tools" role="group" aria-label="Filter tools">
+        <button class="chip" aria-pressed="true" data-value="all">All</button>
+        {% for c in site.data.tools %}<button class="chip" aria-pressed="false" data-value="{{ c.key }}">{{ c.category }}</button>{% endfor %}
+      </div>
+      <div class="cards">
+        {% for c in site.data.tools %}{% for t in c.items %}
+        {% if t.repo %}{% assign href = "https://github.com/" | append: site.github_org | append: "/" | append: t.repo %}{% else %}{% assign href = t.url %}{% endif %}
+        <a class="card tool" data-cat="{{ c.key }}" href="{{ href }}" target="_blank" rel="noopener"{% if t.repo %} data-repo="{{ t.repo }}"{% endif %}>
+          <span class="card-cat">{{ c.category }}</span>
+          <h3>{{ t.name }}</h3>
+          <p>{{ t.description }}</p>
+          <span class="card-meta"><span class="tag">{{ t.lang }}</span>{% if t.repo %}<span class="live-stars" hidden></span><span class="live-push" hidden></span>{% endif %}</span>
+        </a>
+        {% endfor %}{% endfor %}
+      </div>
+      <p class="note">Is your tool missing? <a href="https://github.com/{{ site.github_org }}/Universal-Variability-Language.github.io/issues">Suggest it</a> and we will add it.</p>
+    </div>
+
+    <div id="eco-repos" role="tabpanel" aria-labelledby="tab-eco-repos" hidden>
+      <h3 class="sub">Product repositories</h3>
+      <div class="table-scroll">
+        <table class="repos">
+          <thead><tr><th>Repository</th><th>Purpose</th><th>Language</th><th class="num">Stars</th><th>Last push</th></tr></thead>
+          <tbody>
+            {% for r in site.data.repos.product %}
+            <tr data-repo="{{ r.name }}">
+              <td><a href="https://github.com/{{ site.github_org }}/{{ r.name }}">{{ r.name }}</a></td>
+              <td>{{ r.purpose }}</td>
+              <td><span class="tag">{{ r.lang }}</span></td>
+              <td class="num live-stars">–</td>
+              <td class="live-push">–</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <h3 class="sub">Academic material &amp; evaluations</h3>
+      <div class="table-scroll">
+        <table class="repos">
+          <thead><tr><th>Repository</th><th>Purpose</th><th class="num">Stars</th><th>Last push</th></tr></thead>
+          <tbody>
+            {% for r in site.data.repos.academic %}
+            <tr data-repo="{{ r.name }}">
+              <td><a href="https://github.com/{{ site.github_org }}/{{ r.name }}">{{ r.name }}</a>{% if r.deprecated %} <span class="tag tag-warn">deprecated</span>{% endif %}</td>
+              <td>{{ r.purpose }}</td>
+              <td class="num live-stars">–</td>
+              <td class="live-push">–</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

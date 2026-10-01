@@ -1,0 +1,6 @@
+// submodels/Sauces.uvl
+features
+    Type
+        alternative
+            Ketchup
+            Mustard

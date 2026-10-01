@@ -1,0 +1,16 @@
+services:
+  jekyll:
+    image: ruby:3.3
+    working_dir: /site
+    environment:
+      BUNDLE_PATH: /site/vendor/bundle
+      HOME: /tmp
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - .:/site
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    command: >
+      sh -c "bundle install &&
+             bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling"

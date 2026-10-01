@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="#top"><img src="{{ '/assets/img/favicon.svg' | relative_url }}" alt="" width="24" height="24"><span>UVL</span></a>
+      <p class="muted">A community effort towards a unified language for variability models, born from the <a href="https://modevar.github.io/">MODEVAR</a> initiative.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="#language">Language</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#project">Project status</a>
+      <a href="#cite">How to cite</a>
+    </div>
+    <div>
+      <h4>Community</h4>
+      <a href="https://github.com/{{ site.github_org }}">GitHub organization</a>
+      <a href="https://github.com/{{ site.github_org }}/UVLEP">Enhancement proposals</a>
+      <a href="https://github.com/{{ site.github_org }}/UVLEP/discussions">Discussions</a>
+      <a href="https://modevar.github.io/">MODEVAR</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom muted">
+    <span>Parsers and libraries are released under LGPL-3.0. See each repository for its license.</span>
+    <span>Last updated {{ site.time | date: "%B %Y" }}</span>
+  </div>
+</footer>

@@ -1,0 +1,26 @@
+title: Universal Variability Language
+short_title: UVL
+description: >-
+  UVL is a community-driven, textual language for feature models and variability
+  models, born from the MODEVAR initiative and backed by a growing tool ecosystem.
+lang: en
+url: "https://diverso-lab.github.io"
+baseurl: "/uvl-ecosystem"  # overridden by the Pages workflow at build time
+
+github_org: Universal-Variability-Language
+
+# Contact form. GitHub Pages is static, so submissions go to an external
+# form backend (Formspree, Getform, Basin...). Paste the endpoint here.
+# While empty, the form falls back to opening the visitor's mail client.
+contact:
+  form_endpoint: ""
+  fallback_email: ""   # address used by the mailto fallback
+
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+  - docker-compose.yml

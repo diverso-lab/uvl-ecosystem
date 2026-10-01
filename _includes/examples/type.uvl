@@ -1,0 +1,21 @@
+include
+    Type.string-constraints
+    Type.numeric-constraints
+
+features
+    Sandwich
+        mandatory
+            Bread
+            String Name        // typed features
+            Integer Slices
+        optional
+            Sauce
+                alternative
+                    Ketchup
+                    Mustard
+            Cheese
+
+constraints
+    Ketchup => Cheese
+    len(Name) <= 20             // string constraint
+    Slices >= 2

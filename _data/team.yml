@@ -1,0 +1,48 @@
+# Affiliations as listed on the current official website.
+# TODO: have the core team confirm affiliations and roles before publishing.
+core:
+  - institution: University of Seville
+    country: Spain
+    people:
+      - name: David Benavides
+        url: http://www.lsi.us.es/~dbc/en/
+      - name: José A. Galindo
+        url: http://personales.us.es/jagalindo/
+  - institution: Johannes Kepler University Linz
+    country: Austria
+    people:
+      - name: Rick Rabiser
+        url: https://rickrabiser.github.io/rick/
+      - name: Malte Grave
+        url: https://www.jku.at/lit-cyber-physical-systems-lab/ueber-uns/team/malte-grave-msc/
+  - institution: TU Braunschweig
+    country: Germany
+    people:
+      - name: Thomas Thüm
+        url: https://www.uni-paderborn.de/person/102807
+      - name: Chico Sundermann
+        url: https://www.uni-ulm.de/in/sp/team/chico-sundermann/
+  - institution: Karlsruhe Institute of Technology
+    country: Germany
+    people:
+      - name: Kevin Feichtinger
+        url: https://dsis.kastel.kit.edu/staff_kevin_feichtinger.php
+  - institution: University of Siegen
+    country: Germany
+    people:
+      - name: Malte Lochau
+        url: https://mbe.informatik.uni-siegen.de/team/malte-lochau/
+      - name: Mathis Weiß
+        url: https://mbe.informatik.uni-siegen.de/team/mathis-weiss/
+  - institution: University of Málaga
+    country: Spain
+    people:
+      - name: José Miguel Horcas
+        url: https://sites.google.com/view/josemiguelhorcas
+contributors:
+  - { name: Dominik Engelhardt, affiliation: TU Braunschweig }
+  - { name: Dario Romano, affiliation: JKU Linz }
+  - { name: Stefan Vill, affiliation: University of Ulm }
+  - { name: Jacob Loth, affiliation: University of Ulm }
+  - { name: Prankur Agarwal, affiliation: JKU Linz }
+  - { name: David Romero-Organvidez, affiliation: University of Seville }

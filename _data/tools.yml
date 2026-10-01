@@ -1,0 +1,81 @@
+# Tools grouped by what the visitor wants to do.
+# `repo` (org repo name) lets the page pull live stars / last push from GitHub.
+- category: Try & edit
+  key: try
+  items:
+    - name: flamapy.IDE
+      description: Web-based editor and analysis environment for UVL models. Nothing to install.
+      lang: Web
+      url: https://ide.flamapy.org/
+    - name: UVL Playground
+      description: Web playground built on the UVLS language server.
+      lang: Web
+      url: https://uvl.uni-ulm.de/
+    - name: VS Code extension
+      description: Syntax highlighting, diagnostics and completion for UVL, powered by UVLS.
+      lang: VS Code
+      url: https://marketplace.visualstudio.com/items?itemName=caradhras.uvls-code
+    - name: uvlhighlight
+      description: LaTeX package to typeset UVL listings with syntax highlighting in papers.
+      lang: LaTeX
+      repo: uvlhighlight
+
+- category: Integrate in your code
+  key: integrate
+  items:
+    - name: uvl-parser
+      description: Reference ANTLR grammar with generated parsers for Java, Python and JavaScript.
+      lang: Java · Python · JS
+      repo: uvl-parser
+    - name: java-fm-metamodel
+      description: Java library to parse, manipulate and write UVL models through a feature-model API.
+      lang: Java
+      repo: java-fm-metamodel
+    - name: uvlparser on PyPI
+      description: Python distribution of the UVL parser.
+      lang: Python
+      url: https://pypi.org/project/uvlparser/
+    - name: UVL.js
+      description: The parser for the JavaScript ecosystem, published on npm as uvl-parser.
+      lang: JavaScript
+      url: https://www.npmjs.com/package/uvl-parser
+
+- category: IDE support
+  key: ide
+  items:
+    - name: UVLS
+      description: Language Server Protocol implementation for UVL. Bring UVL to any LSP-capable editor.
+      lang: Rust
+      repo: uvl-lsp
+
+- category: Analyze & transform
+  key: analyze
+  items:
+    - name: Flamapy
+      description: Python framework for the automated analysis of feature models, with first-class UVL support.
+      lang: Python
+      url: https://www.flamapy.org/
+    - name: FeatureIDE
+      description: Eclipse-based IDE for feature-oriented software development that reads and writes UVL.
+      lang: Java
+      url: https://github.com/FeatureIDE/FeatureIDE
+    - name: TraVarT
+      description: Transformations between UVL and other variability modelling approaches.
+      lang: Java
+      url: https://github.com/SECPS/TraVarT
+    - name: FM Fact Label
+      description: Configurable, interactive visualization of feature model characteristics.
+      lang: Web
+      url: https://doi.org/10.1145/3503229.3547025
+
+- category: Models & data
+  key: data
+  items:
+    - name: uvl-models
+      description: Broad collection of publicly available feature models in UVL. Pull requests welcome.
+      lang: UVL
+      repo: uvl-models
+    - name: UVLHub
+      description: Feature model data repository built on UVL and open science principles, with DOIs per dataset.
+      lang: Web
+      url: https://www.uvlhub.io/
